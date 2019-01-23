@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PassportDB" Class="EmbassyDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sqlexpress;AttachDbFilename=C:\PassportData\PassportDB.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="Passport.Properties.Settings" SettingsPropertyName="PassportDBConnectionString3" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Customer" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="NationalID" Type="System.String" DbType="Char(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="LName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="BPlace" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="BDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="Height" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UAgeFName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="UAgeMName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="UAgeLName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="EriPassportNo" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="EriPassportType" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="OtherPassportNo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="FaxNo" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="emailAdd" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EEO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StatusDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DinNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CustomerFile" Member="CustomerFiles">
+    <Type Name="CustomerFile">
+      <Column Name="RegID" Type="System.String" DbType="Char(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="LName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="BDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BPlace" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="NChar(6)" CanBeNull="true" />
+      <Column Name="PassportNo" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Occupation" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Profession" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DateFromEritrea" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateToUganda" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaritalStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MotherName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Education" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ExitMeans" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WorkPermit" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Photo" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Officer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FileNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FileStatus" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="RegDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="OprID" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="Confirmed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="CustomerFile_Family" Member="Families" ThisKey="RegID" OtherKey="RegID" Type="Family" />
+      <Association Name="CustomerFile_Kin" Member="Kin" ThisKey="RegID" OtherKey="RegID" Type="Kin" Cardinality="One" />
+      <Association Name="Opr_CustomerFile" Member="Opr" ThisKey="OprID" OtherKey="OprID" Type="Opr" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Family" Member="Families">
+    <Type Name="Family">
+      <Column Name="FamilyID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RegID" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BPlace" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="Relationship" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OprID" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Association Name="CustomerFile_Family" Member="CustomerFile" ThisKey="RegID" OtherKey="RegID" Type="CustomerFile" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kin" Member="Kins">
+    <Type Name="Kin">
+      <Column Name="RegID" Type="System.String" DbType="Char(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KinID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Relationship" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="CustomerFile_Kin" Member="CustomerFile" ThisKey="RegID" OtherKey="RegID" Type="CustomerFile" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Opr" Member="Oprs">
+    <Type Name="Opr">
+      <Column Name="OprID" Type="System.String" DbType="Char(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Password" Type="System.Data.Linq.Binary" DbType="Binary(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Opr_CustomerFile" Member="CustomerFiles" ThisKey="OprID" OtherKey="OprID" Type="CustomerFile" />
+    </Type>
+  </Table>
+</Database>
